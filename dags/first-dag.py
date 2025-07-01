@@ -11,7 +11,7 @@ class CustomSparkKubernetesOperator(SparkKubernetesOperator):
 # Default args for all DAGs
 default_args = {
     "owner": "airflow",
-    "start_date": days_ago(1),
+    "start_date": pendulum.now().subtract(days=1),
 }
 
 # Load job definitions
